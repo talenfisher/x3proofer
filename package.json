@@ -39,10 +39,14 @@
     "jest": "^24.9.0",
     "jest-puppeteer": "^4.3.0",
     "parcel-bundler": "^1.12.3",
+    "posthtml-include": "^1.2.0",
     "ts-jest": "^24.0.2",
     "typescript": "^3.6.2"
   },
   "dependencies": {
     "x3p.js": "^0.8.1"
-  }
+  },
+  "staticFiles": [
+    "manifest.json"
+  ]
 }
