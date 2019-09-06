@@ -8,7 +8,7 @@ x3proofer-proofer {
 
     x3proofer-status {
         position: absolute;
-        top: 10%;
+        top: 15px;
         left: 0;
         width: 100%;
         text-align: center;
@@ -22,6 +22,10 @@ x3proofer-proofer {
             width: 140px;
             text-align: center;
             display: inline-block;
+        }
+
+        ul {
+            margin: 15px 0;
         }
 
         &[value="good"] { color: green; }

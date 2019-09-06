@@ -34,11 +34,10 @@ export default class Proofer extends HTMLElement {
             }
 
             this.appendChild(this.status);
+            
+            for(let anomaly of x3p.anomalies) {
+                this.status.addReason(anomaly.description);
+            }
         });
-    }
-
-    private createStatusElement() {
-        
-
     }
 }

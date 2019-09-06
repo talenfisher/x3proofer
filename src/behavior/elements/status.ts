@@ -30,7 +30,7 @@ export default class Status extends HTMLElement {
         }
     }
 
-    public setup() {
+    private setup() {
         if(!this.icon) {
             this.icon = document.createElement("i");
             this.appendChild(this.icon);
@@ -40,5 +40,12 @@ export default class Status extends HTMLElement {
             this.reasons = document.createElement("ul");
             this.appendChild(this.reasons);
         }
+    }
+
+    public addReason(reason: string) {
+        var li = document.createElement("li");
+        li.innerHTML = reason;
+
+        this.reasons.appendChild(li);
     }
 }
