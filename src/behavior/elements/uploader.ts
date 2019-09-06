@@ -1,5 +1,7 @@
 import { CustomElement } from "../decorators";
 import Session from "../session";
+import X3P from "x3p.js";
+import Popup from "../popup";
 
 @CustomElement("uploader")
 export default class UploaderElement extends HTMLElement {
@@ -14,8 +16,24 @@ export default class UploaderElement extends HTMLElement {
         this.input.addEventListener("change", this.read.bind(this));  
     }
 
-    read() {
+    async read() {
         // read in X3P data here
-        Session.start();
+        let loadingPopup = new Popup("Loading...");
+        loadingPopup.display();
+
+        try {
+            
+            let file = this.input.files[0];
+            let x3p = await X3P.load({ 
+                file,
+                name: file.name
+            });
+
+            loadingPopup.hide(true);
+            Session.start(x3p);
+        } catch(error) {
+            loadingPopup.update("Invalid X3P file specified.");
+            setTimeout(() => loadingPopup.hide(true), 2000);
+        }
     }
 }

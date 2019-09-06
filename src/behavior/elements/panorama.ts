@@ -9,8 +9,8 @@ export default class Panorama extends HTMLElement {
 
     private setupListeners() {
         Session.on("start", () => this.view = "proofer");
+        Session.on("end", () => this.view = "uploader");
     }
-
 
     set view(viewName: "uploader" | "proofer") {
         this.setAttribute("view", viewName);
