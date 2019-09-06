@@ -1,0 +1,30 @@
+$primaryColor: lighten(#1f376c, 15%);
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: Montserrat, sans-serif;
+}
+
+@import "header.scss";
+@import "panorama/uploader.scss";
+
+x3proofer-panorama {
+    position: relative;
+    height: calc(100vh - 70px);
+    width: 100vw;
+    overflow: hidden;
+    white-space: nowrap;
+
+    > * {
+        display: inline-block;
+        width: 100%;
+        position: relative;
+        transition: transform .5s;
+    }
+
+    &[view="proofer"] > * {
+        transform: translateX(-100%);
+    }
+}

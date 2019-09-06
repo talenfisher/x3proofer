@@ -1,0 +1,2 @@
+import "./panorama"
+import "./uploader"

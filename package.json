@@ -8,6 +8,7 @@
     "build": "node build.js",
     "watch": "node build.js --watch",
     "start": "node build.js --serve",
+    "develop": "node build.js --watch --serve",
     "test": "jest --colors --silent",
     "release": "webstore upload --source extension.zip --extension-id $WS_EXT_ID --client-id $WS_CLIENT_ID --client-secret $WS_CLIENT_SECRET --refresh-token $WS_REFRESH_TOKEN --auto-publish",
     "postversion": "git push --follow-tags"
@@ -40,10 +41,12 @@
     "jest-puppeteer": "^4.3.0",
     "parcel-bundler": "^1.12.3",
     "posthtml-include": "^1.2.0",
+    "sass": "^1.23.0-module.beta.1",
     "ts-jest": "^24.0.2",
     "typescript": "^3.6.2"
   },
   "dependencies": {
+    "@webcomponents/webcomponentsjs": "^2.2.10",
     "x3p.js": "^0.8.1"
   },
   "staticFiles": [
