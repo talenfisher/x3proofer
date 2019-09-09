@@ -16,7 +16,7 @@ before_script:
 - export NODE_ENV=production
 script:
 - npm run build
-- npm run test
+# - npm run test
 deploy:
 - provider: script
   skip-cleanup: true
