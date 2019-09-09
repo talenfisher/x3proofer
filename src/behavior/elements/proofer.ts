@@ -37,6 +37,7 @@ export default class Proofer extends HTMLElement {
             
             for(let anomaly of x3p.anomalies) {
                 this.status.addReason(anomaly.description);
+                console.log(anomaly);
             }
         });
     }
