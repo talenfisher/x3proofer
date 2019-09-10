@@ -25,14 +25,7 @@ export default class Proofer extends HTMLElement {
         let renderer = x3p.render(canvas);
         renderer.on("start", () => {
             this.status = document.createElement("x3proofer-status") as Status;
-            
-
-            if(x3p.anomalies.length > 0) {
-                this.status.value = "bad";
-            } else {
-                this.status.value = "good";
-            }
-
+            this.status.value = (x3p.anomalies.length > 0) ? "bad" : "good";
             this.appendChild(this.status);
             
             for(let anomaly of x3p.anomalies) {
