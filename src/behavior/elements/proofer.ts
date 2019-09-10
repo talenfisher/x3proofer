@@ -13,6 +13,7 @@ export default class Proofer extends HTMLElement {
 
     private setupListeners() {
         Session.on("start", this.read.bind(this));
+        Session.on("end", this.cleanup.bind(this));
     }
 
     private read(x3p: X3P) {
@@ -33,5 +34,9 @@ export default class Proofer extends HTMLElement {
                 console.log(anomaly);
             }
         });
+    }
+
+    private cleanup() {
+        this.innerHTML = "";
     }
 }

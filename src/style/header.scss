@@ -3,6 +3,8 @@ header {
     height: 70px;
     color: white;
     display: flex;
+    z-index: 2;
+    position: relative;
 
     img {
         display: inline-block;

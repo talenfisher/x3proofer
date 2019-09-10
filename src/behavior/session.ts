@@ -20,6 +20,7 @@ export class Session extends EventEmitter {
 
     public end() {
         delete this.data;
+        this.emit("end");
     }
 }
 

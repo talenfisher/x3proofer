@@ -11,13 +11,17 @@ $primaryColor: #1f376c;
 @import "panorama/uploader.scss";
 @import "panorama/proofer.scss";
 
+body {
+    overflow-x: hidden;
+}
+
 x3proofer-panorama {
     position: relative;
     height: calc(100vh - 70px);
     width: 100vw;
-    overflow: hidden;
     white-space: nowrap;
     display: block;
+    z-index: 3;
 
     > * {
         display: inline-block;
@@ -30,7 +34,23 @@ x3proofer-panorama {
     &[view="proofer"] > * {
         transform: translateX(-100%);
     }
+
+    x3proofer-backbtn {
+        position: absolute;
+        height: 70px;
+        line-height: 70px;
+        top: -70px;
+        left: 100%;
+        padding: 0 30px;
+        font-size: 22px;
+        text-align: right;
+        width: 20%;
+        color: white;
+        cursor: pointer;
+    }
 }
+
+
 
 .popup {
     height: 100%;
