@@ -26,7 +26,8 @@ export default class UploaderElement extends HTMLElement {
             let file = this.input.files[0];
             let x3p = await X3P.load({ 
                 file,
-                name: file.name
+                name: file.name,
+                missingFactorThreshold: localStorage.getItem("missing-threshold")
             });
 
             loadingPopup.hide(true);
