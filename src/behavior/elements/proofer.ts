@@ -23,7 +23,13 @@ export default class Proofer extends HTMLElement {
 
         this.appendChild(canvas);
         
-        let renderer = x3p.render(canvas);
+        let renderer = x3p.render(canvas, {
+            canvas,
+            x3p,
+            decimationFactor: parseFloat(localStorage.getItem("decimation")) || 0            
+        });
+
+        console.log(localStorage.getItem("decimation"));
         renderer.on("start", () => {
             this.status = document.createElement("x3proofer-status") as Status;
             this.status.value = (x3p.anomalies.length > 0) ? "bad" : "good";
