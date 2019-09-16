@@ -17,7 +17,9 @@ main {
     cursor: pointer;
     font-weight: bold;
     text-transform: uppercase;
-
+    color: $primaryColor;
+    text-decoration: none;
+    
     &:hover {
         text-decoration: underline;
     }

@@ -15,6 +15,50 @@ body {
     overflow-x: hidden;
 }
 
+a {
+    text-decoration: none;
+}
+
+#settings-btn {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 50px;
+    width: 50px;
+    background: $primaryColor;
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    display: block;
+    line-height: 50px;
+    cursor: pointer;
+
+    &:hover {
+        background: lighten($primaryColor, 10%);
+    }
+}
+
+#report-a-bug {
+    position: fixed;
+    height: 50px;
+    background: transparent;
+    cursor: pointer;
+    bottom: 0;
+    right: 0;
+    line-height: 50px;
+    color: white;
+    text-align: center;
+    display: block;
+    font-size: 1.2em;
+    background: $primaryColor;
+    padding: 0 15px;
+    text-transform: uppercase;
+
+    &:hover {
+        background: lighten($primaryColor, 10%);
+    }
+}
+
 x3proofer-panorama {
     position: relative;
     height: calc(100vh - 70px);

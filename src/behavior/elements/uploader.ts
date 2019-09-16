@@ -6,24 +6,35 @@ import Popup from "../popup";
 @CustomElement("uploader")
 export default class UploaderElement extends HTMLElement {
     private input: HTMLInputElement;
+    private label: HTMLElement;
 
     connectedCallback() {
+        this.label = this.querySelector("label")
         this.input = this.querySelector("input");
         this.setupListeners();
     }
 
     setupListeners() {
-        this.input.addEventListener("change", this.read.bind(this));  
+        let listener = e => e.preventDefault();
+        for(let event of ["drag", "dragstart", "dragend", "dragover", "dragenter", "dragleave", "drop"]) {
+            this.label.addEventListener(event, listener);
+        }
+        
+        this.input.addEventListener("change", e => this.read.apply(this, [this.input.files[0]]));
+        this.label.addEventListener("dragenter", e => this.label.classList.add("hover"));
+        this.label.addEventListener("dragleave", e => this.label.classList.remove("hover"));
+        this.label.addEventListener("drop", e => {
+            e.stopPropagation();
+            this.read(e.dataTransfer.files[0]);
+        });
     }
 
-    async read() {
+    async read(file: File) {
         // read in X3P data here
         let loadingPopup = new Popup("Loading...");
         loadingPopup.display();
 
         try {
-            
-            let file = this.input.files[0];
             let x3p = await X3P.load({ 
                 file,
                 name: file.name,
