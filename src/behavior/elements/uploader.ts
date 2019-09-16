@@ -38,7 +38,7 @@ export default class UploaderElement extends HTMLElement {
             let x3p = await X3P.load({ 
                 file,
                 name: file.name,
-                missingFactorThreshold: localStorage.getItem("missing-threshold")
+                missingFactorThreshold: parseFloat(localStorage.getItem("missing-threshold"))
             });
 
             loadingPopup.hide(true);
