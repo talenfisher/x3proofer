@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <include src="layout/meta-common.html"></include>
+        <title>X3Proofer Settings</title>
+        
+        <include src="layout/link-common.html"></include>
+        
+        <link rel="stylesheet" href="style/settings.scss">
+        <script src="behavior/index.ts" defer></script>
+        <script src="behavior/settings.ts" defer></script>
+    </head>
+    <body>
+        <include src="layout/header.html"></include>
+        <main>
+            <h1>Settings</h1>
+
+            <div class="setting">
+                <label for="decimation">
+                    <h2>Decimation Factor</h2>
+                    <p>Higher = fewer polygons but decreased image quality.  Note: this does not alter the X3P data.</p>
+                </label>
+
+                <div class="setting-input">
+                    <x3proofer-slider id="decimation"></x3proofer-slider>
+                </div>
+            </div>
+
+            <div class="setting">
+                <label for="decimation">
+                    <h2>Missing Data Threshold</h2>
+                    <p>Allowable percent of missing data (adjusted for padding).</p>
+                </label>
+
+                <div class="setting-input">
+                    <x3proofer-slider id="missing-threshold"></x3proofer-slider>
+                </div>
+            </div>
+
+            <a href="/index.html" class="back"><i class="fas fa-chevron-left"></i> Return to Application</a>
+        </main>
+    </body>
+</html>
