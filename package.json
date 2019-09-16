@@ -51,6 +51,7 @@
     "x3p.js": "^0.9.1"
   },
   "staticFiles": [
-    "manifest.json"
+    "manifest.json",
+    "chrome.js"
   ]
 }
