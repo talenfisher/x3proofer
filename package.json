@@ -1,6 +1,6 @@
 {
   "name": "x3proofer",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "chrome extension for detecting anomalies in X3P files",
   "main": "index.js",
   "scripts": {
