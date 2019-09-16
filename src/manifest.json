@@ -4,10 +4,6 @@
     "description": "Chrome extension for detecting anomalies in X3P files",
     "manifest_version": 2,
     "permissions": [],
-    "background": {
-        "scripts": [],
-        "persistent": true
-    },
     "icons": {
         "128": "favicon.png"
     },
